@@ -1,0 +1,25 @@
+verb            route               description
+GET             /                   Home page
+GET             users/              Users Home page
+GET             users/login         Login page
+POST            users/login         Send login data to server and login to account
+DELETE          users/logout        Logout user account
+GET             users/viewusers     View all users(just for testing)
+GET             users/mydetails     View logged user details
+GET             users/adduser       Add user page
+POST            users/adduser       Add user page
+
+
+
+stud 1 - b326f42d-8bbd-4ac3-9597-cd48030f6506
+stud 2 - b27ff46b-544b-47a4-b029-f562601a6ee1
+
+cor 1 -  71dd86af-9ffc-4ab4-a79a-f47194091428
+cor 2 -  e7495896-dde0-4794-b443-607f51b028ae
+cor 3 -  2f7768b1-33d4-4056-88b6-ce45b0495d48
+cor 4 -  119a3a83-4f75-4927-86b4-76a08466bdff
+cor 5 -  a5f62fa6-15d6-42dc-864b-edf1fd09fcbc
+
+
+csv upload grades
+jwt 

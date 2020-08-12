@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Grade Report</h1>
+    <%if (report.result.length >0){ %>
+        <h4>Name: <%= report.name %></h4>
+        <h4>Examination: <%= report.examination %></h4>
+        <h4>Held in: <%= report.held_in %></h4>
+        <h4>Branch: <%= report.branch %></h4>
+        <h4>Seat.no: <%= report.seat_number %></h4>
+        <h4>Reg.no: <%= report.regno %></h4>
+        <table class="table table-striped table-primary">
+            <thead>
+            <tr>
+                <th rowspan="2">COURSE CODE</th>
+                <th rowspan="2">COURSE TITLE</th>
+                <th rowspan="2">COURSE CREDITS</th>
+                <th colspan="3">GRADE</th>
+                <th rowspan="2">CREDITS EARNED</th>
+                <th rowspan="2">GRADE POINTS</th>
+                <th rowspan="2">C X G</th>
+            </tr>
+            <tr>
+                    <th>ESE/PR/OR</th>
+                    <th>IA/TW</th>
+                    <th>OVERALL</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% report.result.forEach(function(row){ %>
+                <tr>
+                    <td><%= row.course_id %></td>
+                    <td><%= row.course_title %></td>
+                    <td><%= row.course_credits %></td>
+                    <td><%= row.grade.ese_pr_or %></td>
+                    <td><%= row.grade.ia_tw %></td>
+                    <td><%= row.grade.overall %></td>
+                    <td><%= row.credits_earned %></td>
+                    <td><%= row.grade_points %></td>
+                    <td><%= row.total_points %></td>
+                </tr>
+            <% }) %>
+            <tr>
+                <td colspan="2">TOTAL</th>
+                <td><%= report.total_credits %></th>
+                <td colspan="3"></th>
+                <td><%= report.total_credits_earned %></th>
+                <td>--</th>
+                <td><%= report.total_grade_points %></th>
+            </tr>
+            </tbody>
+        </table>
+        <h4>Remark: <%= report.remark %></h4>
+        <h4>SGPI: <%= report.sgpi %></h4>
+        <h4>CGPI: <%= report.cgpi %></h4>
+        <h4>Result Declaration: <%= report.result_declared %></h4>
+    <% }else{ %>
+        <h4>No grade found</h4>
+    <% } %>
+    </div>
+</body>
+</html>
